@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/setting"
+        android:icon="@android:drawable/btn_minus"
+        android:title="setting"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/dicNaver"
+                android:title="Naver"
+                app:showAsAction="ifRoom"
+                />
+            <item
+                android:id="@+id/dicCambridge"
+                android:title="Cambridge"
+                app:showAsAction="ifRoom"
+                />
+            <item
+                android:id="@+id/dicMacmillan"
+                android:title="Macmillan"
+                app:showAsAction="ifRoom"
+                />
+        </menu>
+    </item>
+</menu>
