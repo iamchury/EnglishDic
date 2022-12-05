@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -31,10 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
         InputMethodManager inputManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
 
-        Button button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
+        editText.setOnKeyListener(new View.OnKeyListener() {
             @Override
-            public void onClick(View view) {
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 String wordToFind = editText.getText().toString();
                 String urlStr;
 
@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 //                    editText.setText("");
                     inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
                 }
+                return true;
             }
         });
     }
